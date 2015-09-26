@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width"/>
+<title>Gallery | Apple Events</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/prettyphoto.css' %}">
+<link rel="stylesheet" href="{% static 'css/skins/teal.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p class="slide"></p>
+<!-- HEADER
+================================================== -->
+<div class="row">	
+		<div class="six columns">
+			<div class="logo">
+				<a href="{% url 'home' %}"> <img src="{% static 'images/apple/Logo.png' %}"> </a>
+			</div>
+		</div>
+		<div class="six columns noleftmarg">		
+			<nav id="nav-wrap">
+				<ul class="nav-bar sf-menu">
+					<li> <a href="{% url 'home' %}">Home</a> </li>
+					<li>
+					<a href="#">Gallery</a>
+						<ul>						
+							<li> <a href="{% url 'linenIndex' %}">Linens</a> </li>
+							<li> <a href="{% url 'chairIndex' %}">Chair Covers & Sashes</a> </li>
+						</ul>
+					</li>
+					<li><a href="#">Services</a>
+						<ul><li><a href="{% url 'serviceLaundry' %}">Boutique Linen Rental Program</a></li></ul>
+					</li>
+					<li> <a href="{% url 'blog' %}">Blog</a> </li>
+					<li> <a href="{% url 'about' %}">About us</a> </li>
+					<li> <a href="{% url 'contact' %}">Contact</a> </li>
+				</ul>
+			</nav>
+		</div>
+</div>
+<div class="clear">
+</div>
+<!-- SUBHEADER ================================================== -->
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p>
+				 Our Linens
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- CONTENT ================================================== -->
+<div class="row">
+	<div id="portofolio">
+		<!-- Project 1-->
+		<div class="four columns threeportofolio category trains">
+			<h5>NOVELTY <a class="seegallery" href="{% url 'noveltyDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]"><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'noveltyDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/novelty/069.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+		<!-- Project 2-->
+		<div class="four columns threeportofolio category castles">
+			<h5>ORGANZA <a class="seegallery" href="{% url 'organzaDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]"><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'organzaDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/organza/118.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+		<!-- Project 3-->
+		<div class="four columns threeportofolio category nature">
+			<h5>CHEVRON <a class="seegallery" href="{% url 'chevronDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]" ><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'chevronDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/chevron/188.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+		<!-- Project 4-->
+		<div class="four columns threeportofolio category nature castles">
+			<h5>GALAXY <a class="seegallery" href="{% url 'galaxyDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]"><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'galaxyDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/galaxy/140.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+		<!-- Project 5-->
+		<div class="four columns threeportofolio category nature castles">
+			<h5>PINTUCK <a class="seegallery" href="{% url 'pintuckDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]"><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'pintuckDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/pintuck/131.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+		<!-- Project 6-->
+		<div class="four columns threeportofolio category nature">
+			<h5>FORTUNY <a class="seegallery" href="{% url 'fortunyDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]"><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'fortunyDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/fortuny/128.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div id="portfolio ">
+		<!-- Project 6-->
+		<div class="twelve columns threeportofolio category nature">
+			<h5>SATIN <a class="seegallery" href="{% url 'satinDetail' %}">(see gallery)</a></h5>
+			<div class="portofoliothumb">
+				<div class="portofoliothumboverlay threeoverlay">
+					<div class="viewgallery threegallery">
+						<a data-gal="prettyPhoto[gallery]"><img src="{% static 'images/playgal.png' %}" class="left galleryicon" alt=""> Gallery</a>
+					</div>
+					<div class="inner threedetail">
+						<a class="projectdetail" href="{% url 'satinDetail' %}">+ See More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/apple1/satin/139.jpg' %}" class="threeimage" alt=""/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<!-- FOOOTER 
+================================================== -->
+<div class="copyright">
+	<div class="row">
+		<div class="twelve columns">
+			 &copy;<span class="small"> Copyright 2015</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

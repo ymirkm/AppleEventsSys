@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width"/>
+<title>Studio Francesca - Premium Theme by WowThemes.net</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/prettyphoto.css' %}">
+<link rel="stylesheet" href="{% static 'css/skins/teal.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p class="slide"></p>
+<div class="row">	
+		<div class="six columns">
+			<div class="logo">
+				<a href="{% url 'home' %}"> <img src="{% static 'images/apple/Logo.png' %}"> </a>
+			</div>
+		</div>
+		<div class="six columns noleftmarg">		
+			<nav id="nav-wrap">
+				<ul class="nav-bar sf-menu">
+					<li> <a href="{% url 'home' %}">Home</a> </li>
+					<li>
+					<a href="#">Gallery</a>
+						<ul>						
+							<li> <a href="{% url 'linenIndex' %}">Linens</a> </li>
+							<li> <a href="{% url 'chairIndex' %}">Chair Covers & Sashes</a> </li>
+						</ul>
+					</li>
+					<li><a href="#">Services</a>
+						<ul><li><a href="{% url 'serviceLaundry' %}">Boutique Linen Rental Program</a></li></ul>
+					</li>
+					<li> <a href="{% url 'blog' %}">Blog</a> </li>
+					<li> <a href="{% url 'about' %}">About us</a> </li>
+					<li> <a href="{% url 'contact' %}">Contact</a> </li>
+				</ul>
+			</nav>
+		</div>	
+</div>
+<div class="clear">
+</div>
+<div id="subheader">
+	<div class="row">
+		<div class="twelve columns">
+			<p>
+				 Linens - Novelty
+			</p>
+		</div>
+	</div>
+</div>
+<div class="hr">
+</div>
+<div class="row">
+	<div class="twelve columns category">
+			<ul class="pagination">
+				{% if dic.has_previous %}
+					<li class="arrow"><a href="{{dic.previous_page_number}}">&laquo;</a></li>
+				{% else %}
+					<li class="arrow"><a href="#">&laquo;</a></li>
+				{% endif %}
+				{% for page in dic.paginator.page_range %}
+					{% if page != dic.number %}
+						<li><a href="{{forloop.counter}}">{{ forloop.counter }}</a></li>
+					{% else %}
+						<li class="current"><a href="{{forloop.counter}}">{{ forloop.counter }}</a></li>
+					{% endif %}
+				{% endfor %}
+				{% if dic.has_next %}
+					<li class="arrow"><a href="{{dic.next_page_number}}">&raquo;</a></li>
+				{% else %}
+					<li class="arrow"><a href="#">&raquo;</a></li>
+				{% endif %}
+			</ul>
+	</div>
+	<hr>
+	<div id="portofolio">
+		{% for image in dic.object_list %}
+			<div class="three columns category">
+			<p>Code: nvlt-</p>
+			<div class="portofoliothumb">
+				<img src="{% static 'images/apple1/novelty/' %}{{ image.number }}" class="fourimage" alt=""/>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<hr>
+	<div class="twelve columns category">
+			<ul class="pagination">
+				{% if dic.has_previous %}
+					<li class="arrow"><a href="{{dic.previous_page_number}}">&laquo;</a></li>
+				{% else %}
+					<li class="arrow"><a href="#">&laquo;</a></li>
+				{% endif %}
+				{% for page in dic.paginator.page_range %}
+					{% if page != dic.number %}
+						<li><a href="{{forloop.counter}}">{{forloop.counter}}</a></li>
+					{% else %}
+						<li class="current"><a href="{{forloop.counter}}">{{forloop.counter}}</a></li>
+					{% endif %}
+				{% endfor %}
+				{% if dic.has_next %}
+					<li class="arrow"><a href="{{dic.next_page_number}}">&raquo;</a></li>
+				{% else %}
+					<li class="arrow"><a href="#">&raquo;</a></li>
+				{% endif %}
+			</ul>
+	</div>
+</div>
+<div class="hr">
+</div>
+<div class="copyright">
+	<div class="row">
+		<div class="six columns">
+			 &copy;<span class="small"> Copyright 2015</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>
