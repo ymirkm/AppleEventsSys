@@ -70,7 +70,7 @@
 	<div id="portofolio">
 		{% for x in dic %}
 			<div class="three columns category">
-			<p>Code: fty-</p>
+			<p>Code: fty-{{ x.number|slice:":3" }}</p>
 			<div class="portofoliothumb">
 				<img src="{% static 'images/apple1/fortuny/' %}{{ x.number }}" class="fourimage" alt=""/>
 			</div>

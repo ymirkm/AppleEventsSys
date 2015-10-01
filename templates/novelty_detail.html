@@ -88,7 +88,7 @@
 	<div id="portofolio">
 		{% for image in dic.object_list %}
 			<div class="three columns category">
-			<p>Code: nvlt-</p>
+			<p>Code: nvlt-{{ image.number|slice:":3" }}</p>
 			<div class="portofoliothumb">
 				<img src="{% static 'images/apple1/novelty/' %}{{ image.number }}" class="fourimage" alt=""/>
 			</div>
